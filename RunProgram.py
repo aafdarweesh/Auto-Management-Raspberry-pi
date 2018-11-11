@@ -1,1 +1,3 @@
-exec(open("Streaming.py").read())#Start Streaming
+import subprocess
+
+print(subprocess.getstatusoutput('python3 Streaming.py'))#Start Streaming
