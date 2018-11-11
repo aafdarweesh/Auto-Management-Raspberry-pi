@@ -8,18 +8,14 @@ import logging
 import socketserver
 from threading import Condition
 from http import server
-#import time
-
-#start = time.time()
-
 
 PAGE="""\
 <html>
 <head>
-<title>Raspberry Pi - Streaming Test</title>
+<title>Raspberry Pi - Surveillance Camera</title>
 </head>
 <body>
-<center><h1>Raspberry Pi - Streaming Test</h1></center>
+<center><h1>Raspberry Pi - Surveillance Camera</h1></center>
 <center><img src="stream.mjpg" width="1920" height="1080"></center>
 </body>
 </html>
@@ -84,9 +80,7 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
 class StreamingServer(socketserver.ThreadingMixIn, server.HTTPServer):
     allow_reuse_address = True
     daemon_threads = True
-    
-    
-    
+
 with picamera.PiCamera(resolution='1920×1080', framerate=24) as camera:
     output = StreamingOutput()
     #Uncomment the next line to change your Pi's Camera rotation (in degrees)
@@ -98,9 +92,3 @@ with picamera.PiCamera(resolution='1920×1080', framerate=24) as camera:
         server.serve_forever()
     finally:
         camera.stop_recording()
-
-#while(True):
-#    stop = time.time()
-#    if stop - start > 5.0 :
-#        self.exit()
-
