@@ -27,8 +27,8 @@ if check_internet() == True:
 	time.sleep(5) #sleep for 1 min
 
 	try :
-		os.system('python3 Auto-Management-Raspberry-pi/RunProgram.py')
-		#os.system('python3 Auto-Management-Raspberry-pi/Streaming.py')
+		#os.system('python3 Auto-Management-Raspberry-pi/RunProgram.py')
+		os.system('python3 Auto-Management-Raspberry-pi/Streaming.py')
 		#exec(open("Auto-Management-Raspberry-pi/UpdateRepository.py").read())#Update Repository
 		#exec(open("Auto-Management-Raspberry-pi/RunProgram.py").read())#Run python file in the Repository after updating
 	finally :
