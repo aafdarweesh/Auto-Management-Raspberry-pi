@@ -46,6 +46,7 @@ def deleteVideo(videoNumber):
 def deleteAllVideos():
         try :
                 os.system('rm ./videoBuffer/*.*')
+                os.system('echo -n > ./tripMetaData.txt') #delete the content of the current metaData file
                 return {'True'}
         except :
                 return {'False'}
