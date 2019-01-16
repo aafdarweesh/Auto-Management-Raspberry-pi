@@ -12,6 +12,7 @@ def TEST():
 @app.route('/startMission/<videoDuration>/<numberOfVideos>')
 def startMission(videoDuration, numberOfVideos):
         try:
+                os.system('pkill -9 ./startRecording.py ')
                 os.system('python ./startRecording.py ' + str(videoDuration) + ' ' + str(numberOfVideos))
                 return {'True'}
         except:
